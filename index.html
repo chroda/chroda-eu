@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>chroda.eu - Game Developer</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
 	<style>
 		/* Include the Jazz Club font */
 		@font-face {
@@ -26,6 +27,7 @@
 			min-height: 100vh;
 			flex-direction: row;
 			font-family: 'Courier New', Courier, monospace;
+			overflow-x: hidden;
 		}
 
 		.sidebar {
@@ -36,6 +38,11 @@
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			overflow-y: auto;
 		}
 
 		/* Apply Jazz Club font to h1 only */
@@ -57,12 +64,14 @@
 
 		.content {
 			flex: 1;
+			margin-left: 500px;
 			padding: 40px;
 			background-color: white;
 			display: flex;
 			flex-direction: column;
-			justify-content: center;
+			justify-content: flex-start;
 			align-items: center;
+			overflow-y: auto;
 		}
 
 		.content h2 {
@@ -109,6 +118,10 @@
 				width: 400px;
 			}
 
+			.content {
+				margin-left: 400px;
+			}
+
 			.sidebar h1 {
 				font-size: 4em;
 				font-weight: 100;
@@ -122,20 +135,14 @@
 
 			.sidebar {
 				width: 100%;
+				position: relative;
+				height: auto;
 				padding: 20px;
 				text-align: center;
 			}
 
-			.sidebar h1 {
-				font-size: 3em;
-			}
-
-			.sidebar p.subtitle,
-			.sidebar .contact-info {
-				text-align: center;
-			}
-
 			.content {
+				margin-left: 0;
 				padding: 20px;
 				margin-top: 0;
 				width: 100%;
@@ -191,6 +198,8 @@
 					<img src="images-games/rrtmc.png" alt="Rooftop Rascal: The Midnight Cat">
 				</a>
 			</div>
+
+			<!-- Add more product items as needed -->
 		</div>
 	</div>
 
