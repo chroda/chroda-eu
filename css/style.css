@@ -1,0 +1,152 @@
+@font-face {
+  font-family: "Jazz Club";
+  src: url("fonts/Jazz_Club.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: row;
+  font-family: "Courier New", Courier, monospace;
+  overflow-x: hidden;
+}
+.sidebar {
+  background-color: #dc143c;
+  color: white;
+  width: 500px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+}
+.sidebar h1 {
+  font-family: "Jazz Club", sans-serif;
+  font-size: 5em;
+  font-weight: 100;
+}
+.sidebar p.subtitle {
+  text-align: right;
+  font-size: 0.85rem;
+}
+.sidebar .contact-info {
+  text-align: right;
+  margin-top: auto;
+}
+.content {
+  flex: 1;
+  margin-left: 500px;
+  padding: 40px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-y: auto;
+}
+.content h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+.product-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.product-item {
+  width: 300px;
+  height: 300px;
+  text-align: center;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+.product-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.product-item a {
+  text-decoration: none;
+  display: block;
+}
+.product-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 1200px) {
+  .sidebar {
+    width: 400px;
+  }
+  .content {
+    margin-left: 400px;
+  }
+  .sidebar h1 {
+    font-size: 4em;
+    font-weight: 100;
+  }
+}
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    position: relative;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+  }
+  .content {
+    margin-left: 0;
+    padding: 20px;
+    margin-top: 0;
+    width: 100%;
+  }
+  .product-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .product-item {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 480px) {
+  .sidebar h1 {
+    font-size: 2.5em;
+  }
+  .content h2 {
+    font-size: 1.5em;
+  }
+}
+
+.copyright {
+  margin-top: auto;
+  padding: 10px;
+  text-align: center;
+  font-size: 0.75em;
+  color: #555;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .copyright {
+    margin-top: 20px;
+  }
+}

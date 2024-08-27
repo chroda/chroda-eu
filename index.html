@@ -5,175 +5,11 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>chroda.eu - Game Developer</title>
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
-	<style>
-		/* Include the Jazz Club font */
-		@font-face {
-			font-family: 'Jazz Club';
-			src: url('fonts/Jazz_Club.ttf') format('truetype');
-			font-weight: normal;
-			font-style: normal;
-		}
-
-		* {
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-		}
-
-		body {
-			font-family: Arial, sans-serif;
-			display: flex;
-			min-height: 100vh;
-			flex-direction: row;
-			font-family: 'Courier New', Courier, monospace;
-			overflow-x: hidden;
-		}
-
-		.sidebar {
-			background-color: #dc143c;
-			color: white;
-			width: 500px;
-			padding: 50px;
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-			position: fixed;
-			top: 0;
-			bottom: 0;
-			left: 0;
-			overflow-y: auto;
-		}
-
-		/* Apply Jazz Club font to h1 only */
-		.sidebar h1 {
-			font-family: 'Jazz Club', sans-serif;
-			font-size: 5em;
-			font-weight: 100;
-		}
-
-		.sidebar p.subtitle {
-			text-align: right;
-			font-size: .85rem;
-		}
-
-		.sidebar .contact-info {
-			text-align: right;
-			margin-top: auto;
-		}
-
-		.content {
-			flex: 1;
-			margin-left: 500px;
-			padding: 40px;
-			background-color: white;
-			display: flex;
-			flex-direction: column;
-			justify-content: flex-start;
-			align-items: center;
-			overflow-y: auto;
-		}
-
-		.content h2 {
-			font-size: 2em;
-			margin-bottom: 20px;
-		}
-
-		.product-grid {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			gap: 40px;
-			flex-wrap: wrap;
-		}
-
-		.product-item {
-			width: 300px;
-			height: 300px;
-			text-align: center;
-			border-radius: 10px;
-			overflow: hidden;
-			transition: transform 0.3s ease;
-			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.2);
-		}
-
-		.product-item img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-		}
-
-		.product-item a {
-			text-decoration: none;
-			display: block;
-		}
-
-		.product-item:hover {
-			transform: translateY(-5px);
-			box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 12px 40px rgba(0, 0, 0, 0.3);
-		}
-
-		@media (max-width: 1200px) {
-			.sidebar {
-				width: 400px;
-			}
-
-			.content {
-				margin-left: 400px;
-			}
-
-			.sidebar h1 {
-				font-size: 4em;
-				font-weight: 100;
-			}
-		}
-
-		@media (max-width: 768px) {
-			body {
-				flex-direction: column;
-			}
-
-			.sidebar {
-				width: 100%;
-				position: relative;
-				height: auto;
-				padding: 20px;
-				text-align: center;
-			}
-
-			.content {
-				margin-left: 0;
-				padding: 20px;
-				margin-top: 0;
-				width: 100%;
-			}
-
-			.product-grid {
-				flex-direction: column;
-				gap: 20px;
-			}
-
-			.product-item {
-				width: 100%;
-				max-width: 300px;
-				margin: 0 auto;
-			}
-		}
-
-		@media (max-width: 480px) {
-			.sidebar h1 {
-				font-size: 2.5em;
-			}
-
-			.content h2 {
-				font-size: 1.5em;
-			}
-		}
-	</style>
+	<link rel="icon" href="iamges/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-
 	<div class="sidebar">
 		<h1>chroda.eu</h1>
 		<p class="subtitle">Christian Marcell de Oliveira trading as chroda</p>
@@ -182,27 +18,32 @@
 			<p><a href="https://www.linkedin.com/in/chroda" target="_blank" style="color: white;">LinkedIn</a></p>
 		</div>
 	</div>
-
 	<div class="content">
 		<h2>Games Published</h2>
 		<div class="product-grid">
 			<div class="product-item">
 				<a href="https://store.playstation.com/concept/10010724/" target="_blank"
 					title="Rooftop Rascal: The Alley Cat">
-					<img src="images-games/rrtac.jpg" alt="Rooftop Rascal: The Alley Cat">
+					<img src="images/games/rrtac.jpg" alt="Rooftop Rascal: The Alley Cat">
 				</a>
 			</div>
 			<div class="product-item">
 				<a href="https://store.playstation.com/concept/10011776/" target="_blank"
 					title="Rooftop Rascal: The Midnight Cat">
-					<img src="images-games/rrtmc.png" alt="Rooftop Rascal: The Midnight Cat">
+					<img src="images/games/rrtmc.jpg" alt="Rooftop Rascal: The Midnight Cat">
 				</a>
 			</div>
-
-			<!-- Add more product items as needed -->
+			<div class="product-item">
+				<a href="https://store.playstation.com/concept/10012305/" target="_blank"
+					title="Rooftop Rascal: The Drizzle Cat">
+					<img src="images/games/rrtdc.jpg" alt="Rooftop Rascal: The Drizzle Cat">
+				</a>
+			</div>
+		</div>
+		<div class="copyright">
+			<p>&copy; 2024 Christian Marcell de Oliveira. All rights reserved.</p>
 		</div>
 	</div>
-
 </body>
 
 </html>
