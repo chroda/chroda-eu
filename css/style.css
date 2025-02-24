@@ -5,23 +5,12 @@
   font-style: normal;
 }
 
-:root {
-  --background-content: #1a1a1a;
-  --text-color: #ffffff;
-  --sidebar-background: #dc143c;
-  --sidebar-text: #ffffff;
-  --shadow-color: rgba(0, 0, 0, 0.3);
-  --product-item-shadow: rgba(0, 0, 0, 0.2);
-  --copyright-color: #999;
-}
-
 .light-mode {
   --background-content: #ffffff;
   --text-color: #333333;
   --sidebar-background: #dc143c;
   --sidebar-text: #ffffff;
   --shadow-color: rgba(0, 0, 0, 0.1);
-  --product-item-shadow: rgba(0, 0, 0, 0.1);
   --copyright-color: #555;
 }
 
@@ -30,8 +19,7 @@
   --text-color: #ffffff;
   --sidebar-background: #dc143c;
   --sidebar-text: #ffffff;
-  --shadow-color: rgba(0, 0, 0, 0.3);
-  --product-item-shadow: rgba(0, 0, 0, 0.2);
+  --shadow-color: rgba(255, 255, 255, 0.3);
   --copyright-color: #999;
 }
 
@@ -101,7 +89,7 @@ body {
 
 .content h2 {
   font-size: 2em;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   color: var(--text-color);
 }
 
@@ -113,40 +101,39 @@ body {
   flex-wrap: wrap;
 }
 
-.product-item {
+.game-container {
+  text-align: center;
+}
+
+.game-container .link {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.game-container .link .title {
+  margin-bottom: 10px;
+  font-size: 0.6em;
+  color: var(--text-color);
+  font-family: Consolas, "Courier New", monospace;
+  transition: transform 0.3s ease;
+}
+
+.game-container:hover .title {
+  transform: translateY(-10px);
+}
+
+.game-container img {
   width: 300px;
   height: 300px;
-  text-align: center;
-  border-radius: 10px;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-  box-shadow: 0 4px 8px var(--product-item-shadow),
-    0 6px 20px var(--product-item-shadow);
-}
-
-.product-item .link {
-  text-decoration: none;
-  display: block;
-}
-
-.product-item .link img {
-  width: 100%;
-  height: 100%;
+  border-radius: 50%;
   object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0px 15px var(--shadow-color);
 }
 
-.product-item:hover {
+.game-container:hover img {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px var(--shadow-color), 0 12px 40px var(--shadow-color);
-}
-
-.product-item .title {
-  margin-top: 10px;
-  font-size: 1em;
-  color: var(--text-color);
-  text-align: center;
-  font-family: Consolas, "Courier New", monospace;
-  background: transparent;
 }
 
 .copyright {
@@ -178,9 +165,9 @@ body {
 }
 
 #theme-toggle:hover::after {
-  content: attr(title);
+  content: attr(data-tooltip);
   position: absolute;
-  top: 45px;
+  top: 35px;
   left: 50%;
   transform: translateX(-50%);
   padding: 4px 8px;
@@ -240,14 +227,18 @@ body {
     flex-direction: column;
     gap: 20px;
   }
-  .product-item {
+  .game-container .link img {
     width: 100%;
     max-width: 300px;
+    height: 300px;
     margin: 0 auto;
   }
-  .product-item .title {
+  .game-container .title {
     font-size: 0.9em;
-    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  .game-container:hover .title {
+    transform: translateY(-5px);
   }
   #theme-toggle {
     position: fixed;
@@ -256,7 +247,7 @@ body {
     padding: 6px;
   }
   #theme-toggle:hover::after {
-    top: -30px;
+    top: 30px;
     font-size: 0.7em;
   }
 }

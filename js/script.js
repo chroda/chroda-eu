@@ -11,23 +11,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const newTheme = body.classList.contains("light-mode") ? "light" : "dark";
     localStorage.setItem("theme", newTheme);
     themeToggle.setAttribute(
-      "title",
+      "data-tooltip",
       newTheme === "light" ? "Dark Mode" : "Light Mode"
     );
   });
 });
-
-fetch("games.json")
+fetch("js/games.json")
   .then((response) => response.json())
   .then((games) => {
     const grid = document.getElementById("game-grid");
     games.forEach((game) => {
       const item = `
-                <div class="product-item">
-                    <a class="link" href="${game.url}" target="_blank" title="${game.title}">
-                        <img src="${game.image}" alt="${game.title}">
-                    </a>
-                    <div class="title">${game.title}</div>
+                <div class="game-container">
+                  <a class="link" href="${game.url}" target="_blank" title="${game.title}">
+                    <h3 class="title">${game.title}</h3>
+                    <img src="${game.image}" alt="${game.title}">
+                  </a>
                 </div>
             `;
       grid.innerHTML += item;
