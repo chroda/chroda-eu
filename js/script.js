@@ -31,5 +31,12 @@ fetch("js/games.json")
             `;
       grid.innerHTML += item;
     });
+    const itemCount = grid.children.length;
+    const productGrid = document.querySelector(".product-grid");
+    let itemsPerRow;
+    if (itemCount <= 6) itemsPerRow = 3;
+    else if (itemCount <= 8) itemsPerRow = 4;
+    else itemsPerRow = 5;
+    productGrid.className = `product-grid items-${itemsPerRow}`;
   })
-  .catch((error) => console.error("Error loading games:", error));
+  .catch((error) => console.error("Error loading games: ", error));

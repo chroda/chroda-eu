@@ -94,16 +94,34 @@ body {
   color: var(--text-color);
 }
 
-.product-grid {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  flex-wrap: wrap;
+.grid-wrapper {
+  max-width: fit-content;
+  margin: 0 auto;
 }
 
-.game-container {
-  text-align: center;
+.product-grid {
+  display: grid;
+  gap: 40px;
+  justify-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.product-grid.items-3 {
+  grid-template-columns: repeat(3, 300px);
+}
+
+.product-grid.items-4 {
+  grid-template-columns: repeat(4, 300px);
+}
+
+.product-grid.items-5 {
+  grid-template-columns: repeat(5, 300px);
+}
+
+.product-grid .game-container {
+  width: 100%;
+  max-width: 300px;
 }
 
 .game-container .link {
@@ -113,7 +131,8 @@ body {
 
 .game-container .link .title {
   margin-bottom: 10px;
-  font-size: 0.6em;
+  text-align: center;
+  font-size: 0.7em;
   color: var(--text-color);
   font-family: Consolas, "Courier New", monospace;
   transition: transform 0.3s ease;
@@ -194,20 +213,40 @@ body {
   stroke: #ffffff;
 }
 
-@media (max-width: 1200px) {
-  .sidebar {
-    width: 400px;
-  }
-  .content {
-    margin-left: 400px;
-  }
-  .sidebar h1 {
-    font-size: 4em;
-    font-weight: 100;
+@media (min-width: 1920px) and (max-width: 2299px) {
+  .product-grid.items-5 {
+    grid-template-columns: repeat(4, 300px);
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 1600px) and (max-width: 1919px) {
+  .product-grid.items-4,
+  .product-grid.items-5 {
+    grid-template-columns: repeat(3, 300px);
+  }
+}
+
+@media (max-width: 1599px) {
+  .product-grid.items-3,
+  .product-grid.items-4,
+  .product-grid.items-5 {
+    grid-template-columns: repeat(2, 300px);
+  }
+
+  .copyright {
+    margin-top: 50px;
+  }
+}
+
+@media (min-width: 920px) and (max-width: 1199px) {
+  .product-grid.items-3,
+  .product-grid.items-4,
+  .product-grid.items-5 {
+    grid-template-columns: repeat(1, 300px);
+  }
+}
+
+@media (max-width: 919px) {
   body {
     flex-direction: column;
   }
@@ -225,8 +264,18 @@ body {
     width: 100%;
   }
   .product-grid {
+    display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
+    justify-content: center;
+  }
+  .product-grid .game-container {
+    width: 100%;
+    max-width: 300px;
+  }
+  .grid-wrapper {
+    max-width: 300px;
+    padding: 0;
   }
   .game-container .link img {
     width: 100%;
@@ -234,7 +283,7 @@ body {
     height: 300px;
     margin: 0 auto;
   }
-  .game-container .title {
+  .game-container .link .title {
     font-size: 0.9em;
     margin-bottom: 5px;
   }
@@ -259,11 +308,5 @@ body {
   }
   .content h2 {
     font-size: 1.5em;
-  }
-}
-
-@media (max-width: 768px) {
-  .copyright {
-    margin-top: 20px;
   }
 }
