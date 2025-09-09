@@ -16,6 +16,7 @@
     "games": {
       "Orchard Odyssey: Cherry Chase": "Orchard Odyssey: Cherry Chase"
     },
+    "tags": { "announced": "ANNOUNCED" },
     "copyright": "© 2024 Christian Marcell de Oliveira. All rights reserved."
   },
   "ja": {
@@ -35,6 +36,7 @@
     "games": {
       "Orchard Odyssey: Cherry Chase": "オーチャード・オデッセイ：チェリー・チェイス"
     },
+    "tags": { "announced": "発表" },
     "copyright": "© 2024 Christian Marcell de Oliveira. 無断転載を禁ず。"
   }
 }

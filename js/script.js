@@ -132,12 +132,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
           const item = document.createElement("div");
           item.className = "game-container";
+
+          const announcedLabel = t("tags.announced", "ANNOUNCED");
+          const badge = game.announced
+            ? `<span class="badge-announced">${announcedLabel}</span>`
+            : "";
+
           item.innerHTML = `
-          <a class="link" href="${game.url}" target="_blank" title="${gTitle}">
-            <h3 class="title">${gTitle}</h3>
-            <img src="${imgSrc}" alt="${gTitle}" loading="lazy">
-          </a>
-        `;
+            <a class="link" href="${game.url}" target="_blank" rel="noopener" title="${gTitle}">
+              ${badge}
+              <h3 class="title">${gTitle}</h3>
+              <img src="${imgSrc}" alt="${gTitle}" loading="lazy" decoding="async">
+            </a>
+          `;
           productGrid.appendChild(item);
         });
 
