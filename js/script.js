@@ -140,9 +140,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
           item.innerHTML = `
             <a class="link" href="${game.url}" target="_blank" rel="noopener" title="${gTitle}">
-              ${badge}
               <h3 class="title">${gTitle}</h3>
               <img src="${imgSrc}" alt="${gTitle}" loading="lazy" decoding="async">
+              ${badge}
             </a>
           `;
           productGrid.appendChild(item);
