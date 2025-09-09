@@ -4,6 +4,19 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "NotoSansJP-Medium";
+  src: url("/fonts/NotoSansJP-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* one persistent scrollbar on the page */
+html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
 
 .light-mode {
   --background-content: #ffffff;
@@ -13,7 +26,6 @@
   --shadow-color: rgba(0, 0, 0, 0.1);
   --copyright-color: #555;
 }
-
 .dark-mode {
   --background-content: #1a1a1a;
   --text-color: #ffffff;
@@ -30,16 +42,17 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: "NotoSansJP-Medium", sans-serif;
   display: flex;
   min-height: 100vh;
   flex-direction: row;
-  font-family: "Courier New", Courier, monospace;
   overflow-x: hidden;
+  overflow-y: hidden; /* avoid second scrollbar; html handles page scroll */
   background-color: var(--background-content);
   color: var(--text-color);
 }
 
+/* Sidebar */
 .sidebar {
   background-color: var(--sidebar-background);
   color: var(--sidebar-text);
@@ -52,21 +65,18 @@ body {
   top: 0;
   bottom: 0;
   left: 0;
-  overflow-y: auto;
+  overflow-y: auto; /* only appears if truly needed */
 }
-
 .sidebar h1 {
   font-family: "Jazz Club", sans-serif;
   font-size: 5em;
   font-weight: 100;
 }
-
 .sidebar p.subtitle {
   text-align: right;
   font-size: 0.85rem;
   margin-bottom: 50px;
 }
-
 .sidebar .contact-info {
   display: flex;
   flex-direction: column;
@@ -75,6 +85,7 @@ body {
   margin-top: auto;
 }
 
+/* Main content */
 .content {
   flex: 1;
   margin-left: 500px;
@@ -84,21 +95,53 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  overflow-y: auto;
   color: var(--text-color);
 }
-
 .content h2 {
-  font-size: 2em;
+  font-size: clamp(1.8rem, 4.2vw, 2.8rem);
   margin-bottom: 40px;
-  color: var(--text-color);
+  text-transform: uppercase;
 }
 
+/* Wrapper for dynamic sections */
 .grid-wrapper {
-  max-width: fit-content;
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
 }
 
+/* Franchise sections + fold */
+.franchise {
+  width: 100%;
+  margin: 0 auto 48px;
+}
+.franchise-title {
+  text-align: center;
+  font-size: clamp(1.4rem, 3.2vw, 2.2rem);
+  line-height: 1.2;
+  cursor: pointer;
+  user-select: none;
+  margin: 0;
+  position: relative;
+}
+.franchise-title::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background: currentColor;
+  width: 80%;
+  max-width: 780px;
+  margin: 12px auto 24px;
+  opacity: 0.9;
+}
+.franchise .product-grid {
+  margin-top: 0;
+}
+.franchise.collapsed .product-grid {
+  display: none;
+}
+
+/* Product grid */
 .product-grid {
   display: grid;
   gap: 40px;
@@ -106,42 +149,34 @@ body {
   width: 100%;
   justify-content: center;
 }
-
 .product-grid.items-3 {
   grid-template-columns: repeat(3, 300px);
 }
-
 .product-grid.items-4 {
   grid-template-columns: repeat(4, 300px);
 }
-
 .product-grid.items-5 {
   grid-template-columns: repeat(5, 300px);
 }
 
+/* Cards */
 .product-grid .game-container {
   width: 100%;
   max-width: 300px;
 }
-
 .game-container .link {
   color: var(--text-color);
   text-decoration: none;
 }
-
 .game-container .link .title {
   margin-bottom: 10px;
   text-align: center;
   font-size: 0.7em;
-  color: var(--text-color);
-  font-family: Consolas, "Courier New", monospace;
   transition: transform 0.3s ease;
 }
-
 .game-container:hover .title {
   transform: translateY(-10px);
 }
-
 .game-container img {
   width: 300px;
   height: 300px;
@@ -150,12 +185,12 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 0px 15px var(--shadow-color);
 }
-
 .game-container:hover img {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px var(--shadow-color), 0 12px 40px var(--shadow-color);
 }
 
+/* Footer */
 .copyright {
   margin-top: auto;
   padding: 10px;
@@ -165,10 +200,11 @@ body {
   width: 100%;
 }
 
+/* Controls: language + theme */
+#language-toggle,
 #theme-toggle {
   position: fixed;
   top: 20px;
-  right: 20px;
   padding: 10px;
   background: transparent;
   border: none;
@@ -179,11 +215,14 @@ body {
   align-items: center;
   justify-content: center;
 }
-
-#theme-toggle svg {
-  transition: fill 0.3s, stroke 0.3s;
+#language-toggle {
+  right: 60px;
+}
+#theme-toggle {
+  right: 20px;
 }
 
+#language-toggle:hover::after,
 #theme-toggle:hover::after {
   content: attr(data-tooltip);
   position: absolute;
@@ -199,45 +238,49 @@ body {
   pointer-events: none;
 }
 
-#theme-toggle:hover {
-  background: transparent;
+#language-toggle svg,
+#theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+#language-toggle svg *,
+#theme-toggle svg * {
+  fill: currentColor !important;
+  stroke: currentColor !important;
 }
 
-.light-mode #theme-toggle svg {
-  fill: #1a1a1a;
-  stroke: #1a1a1a;
+.light-mode #language-toggle,
+.light-mode #theme-toggle {
+  color: #1a1a1a;
+}
+.dark-mode #language-toggle,
+.dark-mode #theme-toggle {
+  color: #ffffff;
 }
 
-.dark-mode #theme-toggle svg {
-  fill: #ffffff;
-  stroke: #ffffff;
-}
-
+/* Responsive */
 @media (min-width: 1920px) and (max-width: 2299px) {
   .product-grid.items-5 {
     grid-template-columns: repeat(4, 300px);
   }
 }
-
 @media (min-width: 1600px) and (max-width: 1919px) {
   .product-grid.items-4,
   .product-grid.items-5 {
     grid-template-columns: repeat(3, 300px);
   }
 }
-
 @media (max-width: 1599px) {
   .product-grid.items-3,
   .product-grid.items-4,
   .product-grid.items-5 {
     grid-template-columns: repeat(2, 300px);
   }
-
   .copyright {
     margin-top: 50px;
   }
 }
-
 @media (min-width: 920px) and (max-width: 1199px) {
   .product-grid.items-3,
   .product-grid.items-4,
@@ -245,7 +288,6 @@ body {
     grid-template-columns: repeat(1, 300px);
   }
 }
-
 @media (max-width: 919px) {
   body {
     flex-direction: column;
@@ -290,18 +332,22 @@ body {
   .game-container:hover .title {
     transform: translateY(-5px);
   }
+  #language-toggle {
+    top: 10px;
+    right: 56px;
+    padding: 6px;
+  }
   #theme-toggle {
-    position: fixed;
     top: 10px;
     right: 10px;
     padding: 6px;
   }
+  #language-toggle:hover::after,
   #theme-toggle:hover::after {
     top: 30px;
     font-size: 0.7em;
   }
 }
-
 @media (max-width: 480px) {
   .sidebar h1 {
     font-size: 2.5em;

@@ -1,0 +1,40 @@
+{
+  "en": {
+    "meta": { "title": "chroda.eu - Indie Game Developer" },
+    "contact-info": {
+      "basedIn": "Based in Portugal",
+      "contactLinkedIn": "Contact at LinkedIn",
+      "followX": "Follow on X",
+      "followBsky": "Follow on Bluesky"
+    },
+    "sections": { "gamesPublished": "Games Published" },
+    "theme": { "light": "Light Mode", "dark": "Dark Mode" },
+    "language": "Switch Language",
+    "franchises": {
+      "Orchard Odyssey": "Orchard Odyssey"
+    },
+    "games": {
+      "Orchard Odyssey: Cherry Chase": "Orchard Odyssey: Cherry Chase"
+    },
+    "copyright": "© 2024 Christian Marcell de Oliveira. All rights reserved."
+  },
+  "ja": {
+    "meta": { "title": "chroda.eu - インディーゲーム開発者" },
+    "contact-info": {
+      "basedIn": "拠点：ポルトガル",
+      "contactLinkedIn": "LinkedInで連絡",
+      "followX": "Xでフォロー",
+      "followBsky": "Blueskyでフォロー"
+    },
+    "sections": { "gamesPublished": "公開中のゲーム" },
+    "theme": { "light": "ライトモード", "dark": "ダークモード" },
+    "language": "言語を切り替える",
+    "franchises": {
+      "Orchard Odyssey": "オーチャード・オデッセイ"
+    },
+    "games": {
+      "Orchard Odyssey: Cherry Chase": "オーチャード・オデッセイ：チェリー・チェイス"
+    },
+    "copyright": "© 2024 Christian Marcell de Oliveira. 無断転載を禁ず。"
+  }
+}
