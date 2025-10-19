@@ -6,8 +6,14 @@
         "title": "Orchard Odyssey: Cherry Chase",
         "url": "https://store.playstation.com/concept/10016203/",
         "image": "images/games/oocc_en.jpg",
-        "image_ja": "images/games/oocc_ja.jpg",
-        "announced": false
+        "image_ja": "images/games/oocc_ja.jpg"
+      },
+      {
+        "title": "Orchard Odyssey: Pumpkin Party",
+        "url": "https://store.playstation.com/concept/10017300/",
+        "image": "images/games/oopp_en.jpg",
+        "image_ja": "images/games/oopp_ja.jpg",
+        "announced": true
       }
     ]
   },
