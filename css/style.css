@@ -50,9 +50,6 @@
   box-sizing: border-box;
 }
 
-html {
-}
-
 body {
   font-family: "NotoSansJP-Medium", sans-serif;
   display: flex;
@@ -168,6 +165,13 @@ body {
 }
 .product-grid.items-5 {
   grid-template-columns: repeat(5, 300px);
+}
+
+.product-grid:has(.game-container:nth-child(2)):not(
+    :has(.game-container:nth-child(3))
+  ) {
+  grid-template-columns: repeat(2, 300px);
+  justify-content: center;
 }
 
 .product-grid .game-container {
@@ -316,8 +320,8 @@ body {
   }
 
   .product-grid {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     justify-content: center;
   }
