@@ -14,7 +14,9 @@
       "Orchard Odyssey": "Orchard Odyssey"
     },
     "games": {
-      "Orchard Odyssey: Cherry Chase": "Orchard Odyssey: Cherry Chase"
+      "Orchard Odyssey: Cherry Chase": "Orchard Odyssey: Cherry Chase",
+      "Orchard Odyssey: Pumpkin Party": "Orchard Odyssey: Pumpkin Party",
+      "Orchard Odyssey: Chestnut Christmas": "Orchard Odyssey: Chestnut Christmas"
     },
     "tags": { "announced": "ANNOUNCED" },
     "copyright": "© 2025 Christian Marcell de Oliveira. All rights reserved."
@@ -35,7 +37,8 @@
     },
     "games": {
       "Orchard Odyssey: Cherry Chase": "オーチャード・オデッセイ：チェリー・チェイス",
-      "Orchard Odyssey: Pumpkin Party": "オーチャード・オデッセイ：パンプキン・パーティー"
+      "Orchard Odyssey: Pumpkin Party": "オーチャード・オデッセイ：パンプキン・パーティー",
+      "Orchard Odyssey: Chestnut Christmas": "オーチャード・オデッセイ：チェスナット・クリスマス"
     },
     "tags": { "announced": "発表された" },
     "copyright": "© 2025 Christian Marcell de Oliveira. 無断転載を禁ず。"

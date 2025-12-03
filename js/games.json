@@ -13,6 +13,13 @@
         "url": "https://store.playstation.com/concept/10017300/",
         "image": "images/games/oopp_en.jpg",
         "image_ja": "images/games/oopp_ja.jpg"
+      },
+      {
+        "title": "Orchard Odyssey: Chestnut Christmas",
+        "url": "https://store.playstation.com/concept/10017623/",
+        "image": "images/games/oocx_en.jpg",
+        "image_ja": "images/games/oocx_ja.jpg",
+        "announced": true
       }
     ]
   },
